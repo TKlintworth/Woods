@@ -20,21 +20,28 @@ public class GunScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate ()
+	void Update ()
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            Debug.Log("Inside getbuttondown");
             Shoot();
+            /*
+            Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+            Debug.DrawRay(transform.position, forward, Color.green, 2.0f);
+            */
         }
 	}
 
     void Shoot()
     {
+        Debug.Log("Inside Shoot");
         //muzzleFlash.Play();
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
+            Debug.Log("ray origin: " + ray.origin + " ray direction: " + ray.direction);
             Debug.Log("camera raycast hit");
             Transform objectHit = hit.transform;
             Debug.Log(objectHit);
@@ -42,11 +49,11 @@ public class GunScript : MonoBehaviour {
             Target target = objectHit.transform.GetComponent<Target>();
             if (target != null)
             {
+                Debug.Log("Damage applied: " + damage);
                 target.TakeDamage(damage);
             }
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal)) as GameObject;
             Destroy(impactGO, 2f);
-              
         }
         /*if (Physics.Raycast(player.transform.position, player.transform.forward, out hit))
         {
