@@ -4,7 +4,11 @@ using System.Collections;
 public class CharController : MonoBehaviour {
 
     [SerializeField]
-    float moveSpeed = 4f;
+    public float moveSpeed = 4f;
+
+   
+ 
+    public GameObject player;
     
 
     Vector3 forward, right;
@@ -12,6 +16,8 @@ public class CharController : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        
+
         forward = Camera.main.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
@@ -33,14 +39,25 @@ public class CharController : MonoBehaviour {
         }
        
 	}
+
     void Move()
     {
+        //let burnCalories know that we're moving now
+        //player.GetComponent<burnCalories>().isMoving = true;
+        //Left Shift send to Sprint to hopefully increase speed
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Sprint();
+            player.GetComponent<burnCalories>().modCalorieBurn();
+        }
         Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("HorizontalKey");
         Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey");
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
-        //Debug.Log("heading: " + heading);
 
+        Debug.Log("heading: " + heading);
+        Debug.Log("Right movement: " + rightMovement);
+        Debug.Log("up movement: " + upMovement);
         //Check if heading vector is zero, if not, update movement vectors
         //without this check, gives error about zero vector
         if(heading != Vector3.zero)
@@ -49,9 +66,28 @@ public class CharController : MonoBehaviour {
             transform.position += rightMovement;
             transform.position += upMovement;
         }
-       
-        
-       
-
     }
+
+    //Speed double while holding Left Shift
+    void Sprint()
+    {
+        moveSpeed = 8f;
+        
+        Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("HorizontalKey");
+        Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey");
+
+        Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
+
+        Debug.Log("SPRINT: heading: " + heading);
+        Debug.Log("SPRINT: Right movement: " + rightMovement);
+        Debug.Log("SPRINT: up movement: " + upMovement);
+
+        if (heading != Vector3.zero)
+        {
+            transform.forward = heading;
+            transform.position += rightMovement;
+            transform.position += upMovement;
+        }
+    }
+
 }
