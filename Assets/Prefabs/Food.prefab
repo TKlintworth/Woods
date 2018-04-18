@@ -12,9 +12,10 @@ GameObject:
   - 23: {fileID: 2389588}
   - 95: {fileID: 9594316}
   - 65: {fileID: 6528326}
+  - 114: {fileID: 11494650}
   m_Layer: 0
   m_Name: Food
-  m_TagString: PickableObject
+  m_TagString: Donut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142440}
   m_LocalRotation: {x: -0.99998575, y: 0, z: 0, w: 0.0053432374}
-  m_LocalPosition: {x: 19.09, y: 1.21, z: 28.98}
+  m_LocalPosition: {x: 47, y: 1.4, z: 67.3}
   m_LocalScale: {x: -0.72329426, y: -0.78163016, z: -0.81141806}
   m_LocalEulerAnglesHint: {x: -0.6123, y: -540, z: -540}
   m_Children: []
@@ -95,6 +96,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11494650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f530568ced66a843bd4f68873b6d850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  donut: {fileID: 142440}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

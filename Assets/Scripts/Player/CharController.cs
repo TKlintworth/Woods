@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CharController : MonoBehaviour {
 
@@ -15,11 +16,9 @@ public class CharController : MonoBehaviour {
     float camRayLength = 1000f;
 
     void Awake()
-    {
+    {   
         playerRigidbody = GetComponent<Rigidbody>();
         floorMask = LayerMask.GetMask("Floor");
-        Debug.Log("Floormask: " + floorMask);
-        Debug.Log("playerRigidBody: " + playerRigidbody);
     }
 
     void FixedUpdate()
@@ -42,7 +41,7 @@ public class CharController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Turning();
+        //Turning();
         if (forward != Vector3.zero)
         {
             if (Input.anyKey)
@@ -104,25 +103,12 @@ public class CharController : MonoBehaviour {
         }
     }
 
-    //TODO
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("PickableObject"))
-        {
-            other.gameObject.SetActive(false);
-            //Destroy(this, 0.1f);
-        }
-        
-    }
-
-  
-
     void Turning()
     {
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit floorHit;
-        Debug.Log("In Turning outside IF");
+        //Debug.Log("In Turning outside IF");
 
         if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
         {
@@ -130,7 +116,7 @@ public class CharController : MonoBehaviour {
 
             playerToMouse.y = 0;
 
-            Debug.Log("In Turning inside IF... playerToMouse:" + playerToMouse);
+            //Debug.Log("In Turning inside IF... playerToMouse:" + playerToMouse);
 
             Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
             playerRigidbody.MoveRotation(newRotation);
