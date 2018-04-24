@@ -14,8 +14,11 @@ public class CharController : MonoBehaviour {
     int floorMask;
     Rigidbody playerRigidbody;
     float camRayLength = 1000f;
+<<<<<<< HEAD
     bool inFireMode = false;
     float speed;
+=======
+>>>>>>> 5884b73da0cd4f0982500abe8ce8b10967035504
 
     void Awake()
     {   
@@ -25,12 +28,16 @@ public class CharController : MonoBehaviour {
 
     void FixedUpdate()
     {
+<<<<<<< HEAD
         //only enable aim to cursor if pressed F
         if (inFireMode)
         {
             Turning();
         }
         
+=======
+        Turning();
+>>>>>>> 5884b73da0cd4f0982500abe8ce8b10967035504
     }
 
     // Use this for initialization
@@ -48,6 +55,7 @@ public class CharController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+<<<<<<< HEAD
         if (Input.GetKeyDown(KeyCode.F))
         {
             if (!inFireMode)
@@ -60,6 +68,8 @@ public class CharController : MonoBehaviour {
             }
             
         }
+=======
+>>>>>>> 5884b73da0cd4f0982500abe8ce8b10967035504
         //Turning();
         if (forward != Vector3.zero)
         {
@@ -83,6 +93,7 @@ public class CharController : MonoBehaviour {
         }
         Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("HorizontalKey");
         Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey");
+<<<<<<< HEAD
         
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
 
@@ -91,6 +102,14 @@ public class CharController : MonoBehaviour {
             rightMovement.Normalize();
             upMovement.Normalize();
         }
+=======
+
+        Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
+
+        //Debug.Log("heading: " + heading);
+        //Debug.Log("Right movement: " + rightMovement);
+        //Debug.Log("up movement: " + upMovement);
+>>>>>>> 5884b73da0cd4f0982500abe8ce8b10967035504
 
         //Check if heading vector is zero, if not, update movement vectors
         //without this check, gives error about zero vector
@@ -112,6 +131,7 @@ public class CharController : MonoBehaviour {
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
 
+<<<<<<< HEAD
         // Debug.Log("SPRINT: heading: " + heading);
         // Debug.Log("SPRINT: Right movement: " + rightMovement);
         // Debug.Log("SPRINT: up movement: " + upMovement);
@@ -121,6 +141,12 @@ public class CharController : MonoBehaviour {
 
 
         
+=======
+        //Debug.Log("SPRINT: heading: " + heading);
+        //Debug.Log("SPRINT: Right movement: " + rightMovement);
+        //Debug.Log("SPRINT: up movement: " + upMovement);
+
+>>>>>>> 5884b73da0cd4f0982500abe8ce8b10967035504
         if (heading != Vector3.zero)
         {
             transform.forward = heading;

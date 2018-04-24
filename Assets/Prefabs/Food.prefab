@@ -108,7 +108,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   donut: {fileID: 142440}
+<<<<<<< HEAD
   donutCalories: 180
+=======
+>>>>>>> 5884b73da0cd4f0982500abe8ce8b10967035504
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

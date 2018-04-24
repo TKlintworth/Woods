@@ -839,9 +839,16 @@ GameObject:
   - 114: {fileID: 11494558}
   - 114: {fileID: 11474870}
   - 136: {fileID: 13665776}
+<<<<<<< HEAD
   m_Layer: 0
   m_Name: Ethan
   m_TagString: Player
+=======
+  - 114: {fileID: 11421934}
+  m_Layer: 0
+  m_Name: Ethan
+  m_TagString: Untagged
+>>>>>>> 5884b73da0cd4f0982500abe8ce8b10967035504
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2551,7 +2558,11 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
+<<<<<<< HEAD
   m_Constraints: 0
+=======
+  m_Constraints: 80
+>>>>>>> 5884b73da0cd4f0982500abe8ce8b10967035504
   m_CollisionDetection: 0
 --- !u!95 &9544840
 Animator:
@@ -2587,6 +2598,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+<<<<<<< HEAD
+=======
+--- !u!114 &11421934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164368}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0eedf4961f5c53409eb6445e5b9fbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+>>>>>>> 5884b73da0cd4f0982500abe8ce8b10967035504
 --- !u!114 &11474870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2613,6 +2639,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 1000
   maxCalories: 2000
+<<<<<<< HEAD
+=======
+  currentCalories: 0
+>>>>>>> 5884b73da0cd4f0982500abe8ce8b10967035504
   calorieBurnRate: 0
   player: {fileID: 164368}
 --- !u!114 &11494636

@@ -1,4 +1,6 @@
 # Woods
-игра prototype
+Currently prototype
 
-Nothing yet!
+Atmospheric survival management game inspired by the movie The Witch.
+Isometric 3D.
+Battle hunger in a vast wilderness filled with dread.

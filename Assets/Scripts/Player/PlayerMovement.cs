@@ -11,7 +11,10 @@ public class PlayerMovement : MonoBehaviour {
     Rigidbody playerRigidbody;
     int floorMask;
     float camRayLength = 100f;
+<<<<<<< HEAD
     
+=======
+>>>>>>> 5884b73da0cd4f0982500abe8ce8b10967035504
 
     void Awake()
     {
@@ -24,9 +27,15 @@ public class PlayerMovement : MonoBehaviour {
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
+<<<<<<< HEAD
      
         //after we get input, call the functions
         Move(h, v);
+=======
+
+        //after we get input, call the functions
+        Move(h,v);
+>>>>>>> 5884b73da0cd4f0982500abe8ce8b10967035504
         Turning();
         Animating(h, v);
     }
