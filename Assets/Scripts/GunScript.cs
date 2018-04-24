@@ -6,7 +6,7 @@ public class GunScript : MonoBehaviour {
     public float damage = 10f;
     public float range = 100f;
 
-    public GameObject player;
+    //public GameObject player;
     public GameObject impactEffect;
     //public ParticleSystem muzzleFlash;
     
@@ -24,7 +24,7 @@ public class GunScript : MonoBehaviour {
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log("Inside getbuttondown");
+            //Debug.Log("Inside getbuttondown");
             Shoot();
             /*
             Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
@@ -35,21 +35,21 @@ public class GunScript : MonoBehaviour {
 
     void Shoot()
     {
-        Debug.Log("Inside Shoot");
+        //Debug.Log("Inside Shoot");
         //muzzleFlash.Play();
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log("ray origin: " + ray.origin + " ray direction: " + ray.direction);
-            Debug.Log("camera raycast hit");
+            //Debug.Log("ray origin: " + ray.origin + " ray direction: " + ray.direction);
+            //Debug.Log("camera raycast hit");
             Transform objectHit = hit.transform;
             Debug.Log(objectHit);
 
             Target target = objectHit.transform.GetComponent<Target>();
             if (target != null)
             {
-                Debug.Log("Damage applied: " + damage);
+                //Debug.Log("Damage applied: " + damage);
                 target.TakeDamage(damage);
             }
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal)) as GameObject;
